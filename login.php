@@ -14,8 +14,8 @@ include_once 'layout_head.php';
 
 <form action="#" method="post">
     <div>
-        <label for="identifiant">Identifiant: </label>
-        <input type="email" id="identifiant" name="identifiant">
+        <label for="email">email: </label>
+        <input type="email" id="email" name="email">
     </div>
     <div>
         <label for="password">Mot de passe: </label>
@@ -53,8 +53,41 @@ if ($access_denied) {
         </div>';
 }
 
-
-
-
+// Si le formulaire à été transmis
+if ($_POST) {
+  // On inclus les classes
+  include_once 'config/database.php';
+  include_once 'objects/user.php';
+  // Récupère la connexion à la database
+  $database = new Database();
+  $db = $database->getConnexion();
+  // Initialisation des objets
+  $user = new User($db);
+  // Vérifie si l'email et le mot de passe sont dans la database
+  $user->email = $_POST['email'];
+  // check if email exists, also get user details using this emailExists() method
+  $email_exists = $user->emailExists();
+  // Si emailExists() a retourné true on valide le login
+  if ($email_exists && password_verify($_POST['password'], $user->password)) {
+    echo "string";
+    // Login validé? alors attribue true aux sessions
+    $_SESSION['logged_in'] = true;
+    $_SESSION['user_id'] = $user->id;
+    $_SESSION['access_level'] = $user->access_level;
+    $_SESSION['firstname'] = $user->firstname;
+    // Si access_level = "Admin", on redirige vers la section admin
+    if ($user->access_level = "Admin") {
+      Header("Location: {$home_url}admin/index.php?action=login_success");
+    }
+    // Sinon, on le redirige seulement dans la section "client"
+    else {
+      header("Location: {$home_url}index.php?action=login_success");
+    }
+  }
+  else { // L'identifiant n'existe pas ou le mot de passe est erroné
+    $access_denied = true;
+    echo "access_denied <br>";
+  }
+}
 include_once 'layout_footer.php';
 ?>
