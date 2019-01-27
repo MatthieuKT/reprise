@@ -21,8 +21,8 @@ include_once 'layout_head.php';
         <label for="password">Mot de passe: </label>
         <input type="password" id="password" name="password">
     </div>
-    <div>
-      <input type="submit" value="Se connecter"/>
+    <div class="button">
+            <button type="submit">Se connecter</button>
     </div>
 </form>
 

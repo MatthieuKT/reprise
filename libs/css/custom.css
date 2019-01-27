@@ -30,6 +30,21 @@ body {
 #main {
   padding: 50px;
 }
+/* Divs d'alerte */
+.alert-success {
+  margin: auto;
+  width: 400px;
+  border: 1px green solid;
+  padding: 15px;
+  margin-bottom: 5px;
+}
+.alert-danger {
+  margin: auto;
+  width: 400px;
+  border: 1px red solid;
+  padding: 15px;
+  margin-bottom: 5px;
+}
 
 
 /* Form */

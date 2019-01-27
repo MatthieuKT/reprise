@@ -10,3 +10,5 @@
   <body>
     <!-- Inclus la barre de navigation -->
     <?php include_once 'navigation.php'; ?>
+
+    <div id="main">
