@@ -1,5 +1,6 @@
 body {
   margin: 0px;
+  font-family: arial
 }
 
 /* Navbar */
@@ -51,7 +52,7 @@ body {
 form {
   /* Uniquement centrer le formulaire sur la page */
   margin: 0 auto;
-  width: 400px;
+  width: 450px;
   /* Encadré pour voir les limites du formulaire */
   padding: 1em;
   border: 1px solid #CCC;
@@ -63,7 +64,7 @@ form div + div {
 label {
   /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
   display: inline-block;
-  width: 90px;
+  width: 120px;
   text-align: right;
 }
 input, textarea {
@@ -94,4 +95,50 @@ button {
   /* Cette marge supplémentaire représente grosso modo le même espace que celui
      entre les étiquettes et les champs texte */
   margin-left: .5em;
+}
+
+/* Tableau */
+table {
+  border-collapse: collapse;
+  margin: auto;
+  width: 90%;
+  background-color: #FAFAFA
+}
+th {
+  text-align: left;
+  padding: 15px;
+  background-color: #55608E;
+  color: white;
+}
+td {
+  padding:15px;
+}
+/* Divers */
+
+/* a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+} */
+
+a {
+  text-decoration: none;
+}
+
+ .fas {
+  color: #333333;
+}
+
+table a {
+  /* background:    #f5f5f5; */
+  border:        2px solid #556699;
+  border-radius: 3px;
+  padding:       8px 20px;
+  color:         #302f2f;
+  display:       inline-block;
+  font:          normal 400 14px/1 "Roboto", sans-serif;
+  text-align:    center;
 }

@@ -16,7 +16,7 @@ class Product {
   }
 
   public function addProduct() {
-    // The query 
+    // The query
     $query = "INSERT INTO " . $this->table_name . "
               SET name=:name, price=:price, description=:description, category_id=:category_id, created=:created";
 
@@ -41,5 +41,29 @@ class Product {
       print_r($stmt->errorInfo());
       return false;
     }
+  }
+
+  public function readAll($from_record_num, $records_per_page) {
+    $query = "SELECT id, name, description, price, category_id
+              FROM " . $this->table_name. "
+              ORDER BY name ASC
+              LIMIT {$from_record_num}, {$records_per_page}";
+
+    $stmt = $this->conn->prepare($query);
+    $stmt->execute();
+    // Retourne les valeurs
+    return $stmt;
+  }
+
+  // Permet d'obtenir le dernier enregistrement pour le trasmetre à product_images
+  function getLastRecord() {
+    $query = "SELECT *
+              FROM produits
+              ORDER BY id
+              DESC LIMIT 1";
+
+    $stmt = $this->conn->prepare($query);
+    $stmt->execute();
+    return $stmt;
   }
 } ?>
