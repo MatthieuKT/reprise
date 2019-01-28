@@ -64,7 +64,7 @@ if ($_POST) {
 <form action="#" method="post" enctype="multipart/form-data">
     <div>
         <label for="name">Nom du produit: </label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" required>
     </div>
     <div>
         <label for="category_id">Categorie: </label>
@@ -82,7 +82,7 @@ if ($_POST) {
     </div>
     <div>
         <label for="price">Prix: </label>
-        <input type="prix" id="price" name="price">
+        <input type="prix" id="price" name="price" required>
     </div>
     <div>
         <label for="description">Description: </label>

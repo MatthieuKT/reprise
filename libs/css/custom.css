@@ -1,36 +1,38 @@
 body {
   margin: 0px;
-  font-family: arial
+  font-family: arial;
+  color: #333333;
 }
-
+li {
+  list-style: none;
+}
 /* Navbar */
 #navigation {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #f1f1f1;
 }
 #navigation li {
   float: left;
 }
 #navigation li a {
   display: block;
-  color: white;
+  color: #333333;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 /* Change the link color to #111 (black) on hover */
 #navigation li a:hover {
-  background-color: #111;
+  background-color: #555;
+  color: white;
 }
 
 
-/* Main div */
-#main {
-  padding: 50px;
-}
+
+
 /* Divs d'alerte */
 .alert-success {
   margin: auto;
@@ -52,10 +54,10 @@ body {
 form {
   /* Uniquement centrer le formulaire sur la page */
   margin: 0 auto;
-  width: 450px;
+  width: 500px;
   /* Encadré pour voir les limites du formulaire */
   padding: 1em;
-  border: 1px solid #CCC;
+  background-color: white;
   border-radius: 1em;
 }
 form div + div {
@@ -64,7 +66,7 @@ form div + div {
 label {
   /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
   display: inline-block;
-  width: 120px;
+  width: 150px;
   text-align: right;
 }
 input, textarea {

@@ -1,0 +1,33 @@
+/* Main div */
+#container {
+  display: flex;
+  flex-direction: row;
+}
+nav {
+  height: 100vh;
+  width: 20%;
+  background-color: #375B74;
+  color: white;
+}
+nav ul {
+  margin: 0px;
+}
+nav li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* border: 1px black solid; */
+}
+nav a {
+  color: white;
+}
+#main {
+  max-height: 100vh;
+  width: 80%;
+  padding: 50px;
+  background-color: #F0F4F7;
+  border-top: 2px #E0E0E8 solid;
+}
+#navigation {
+  color: #333333;
+  background-color: white;
+}

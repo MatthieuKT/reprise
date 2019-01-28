@@ -10,5 +10,11 @@
   <body>
     <!-- Inclus la barre de navigation -->
     <?php include_once 'navigation.php'; ?>
-
+    <div id="container">
+      <nav>
+        <ul>
+          <li><a href="read_products.php">Liste de produits</a></li>
+          <li><a href="new_product.php">Nouveau produit</a></li>
+        </ul>
+      </nav>
     <div id="main">
