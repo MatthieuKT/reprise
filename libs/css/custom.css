@@ -13,6 +13,7 @@ li {
   padding: 0;
   overflow: hidden;
   background-color: #f1f1f1;
+  margin-bottom: 25px;
 }
 #navigation li {
   float: left;
@@ -28,6 +29,20 @@ li {
 #navigation li a:hover {
   background-color: #555;
   color: white;
+}
+
+/* BreadCrumb */
+#breadcrumb {
+  padding-left: 50px;
+}
+#breadcrumb li{
+  display: inline;
+}
+#breadcrumb a {
+  color: #333333;
+}
+#breadcrumb a:hover {
+  text-decoration: underline;
 }
 
 

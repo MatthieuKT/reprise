@@ -12,4 +12,4 @@
     <!-- Inclus la navigation -->
     <?php include_once 'navigation.php'; ?>
 
-    <div id="main">
+    

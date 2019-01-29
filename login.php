@@ -11,20 +11,21 @@ $access_denied=false;
 
 include_once 'layout_head.php';
 ?>
+<div id="main">
 
-<form action="#" method="post">
-    <div>
-        <label for="email">email: </label>
-        <input type="email" id="email" name="email">
-    </div>
-    <div>
-        <label for="password">Mot de passe: </label>
-        <input type="password" id="password" name="password">
-    </div>
-    <div class="button">
-            <button type="submit">Se connecter</button>
-    </div>
-</form>
+  <form action="#" method="post">
+      <div>
+          <label for="email">email: </label>
+          <input type="email" id="email" name="email">
+      </div>
+      <div>
+          <label for="password">Mot de passe: </label>
+          <input type="password" id="password" name="password">
+      </div>
+      <div class="button">
+              <button type="submit">Se connecter</button>
+      </div>
+  </form>
 
 <?php
 // Récupère la valeur 'action' en paramètre URL afin d'afficher les messages
