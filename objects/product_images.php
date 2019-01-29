@@ -85,6 +85,37 @@ class ProductImages {
         $result_message.="<div>Update the record to upload photo.</div>";
       }
       return $result_message;
-  } // function
+  } // /function
 
-  } ?>
+  // read the first product image related to a product
+  function readFirst(){
+    // select query
+    $query = "SELECT id, id_produit, image1
+              FROM " . $this->table_name . "
+              WHERE id_produit = ?
+              LIMIT 0, 1";
+    // prepare query statement
+    $stmt = $this->conn->prepare( $query );
+    // sanitize
+    $this->id=htmlspecialchars(strip_tags($this->id));
+    // bind prodcut id variable
+    $stmt->bindParam(1, $this->product_id);
+    // execute query
+    $stmt->execute();
+    // return values
+    return $stmt;
+  }
+
+  // Lis toute les images associées à un produit
+  function readAllImages() {
+    $query = "SELECT image1, image2
+              FROM " . $this->table_name . "
+              WHERE id_produit = ? ";
+    $stmt = $this->conn->prepare($query);
+    // Sanitize
+    $this->id = htmlspecialchars(strip_tags($this->id));
+    $stmt->bindParam(1, $this->product_id);
+    $stmt->execute();
+    return $stmt;
+  }
+}?>

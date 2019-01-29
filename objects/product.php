@@ -66,4 +66,24 @@ class Product {
     $stmt->execute();
     return $stmt;
   }
+
+  // Affiche l'objet selon son id
+  public function readOne() {
+    $query = "SELECT id, name, price, description, category_id
+              FROM " . $this->table_name . "
+              WHERE id = ?
+              LIMIT 0, 1";
+    $stmt = $this->conn->prepare($query);
+    // Sanitize
+    $this->id = htmlspecialchars(strip_tags($this->id));
+    $stmt->bindParam(1, $this->id);
+    $stmt->execute();
+
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $this->name = $row['name'];
+    $this->price = $row['price'];
+    $this->description = $row['description'];
+    $this->category_id = $row['category_id'];
+  }
 } ?>
