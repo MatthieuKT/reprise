@@ -1,6 +1,7 @@
-#products-display {
+.products-display {
   display: flex;
   flex-direction: row;
+  margin-left: 45px;
 }
 .container {
   margin: 5px;

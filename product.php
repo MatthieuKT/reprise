@@ -41,7 +41,7 @@ $category->readName();
 
 echo '<ul id="breadcrumb">';
   echo "<li><a href='{$home_url}'> Laudace </a> /</li> ";
-  echo "<li><a href=''>{$category->name}</a> / </li>";
+  echo "<li><a href='{$home_url}/category.php?categorie={$category->name}'>{$category->name}</a> / </li>";
   echo "{$product->name}";
 echo '</ul>';
 

@@ -55,6 +55,20 @@ class Product {
     return $stmt;
   }
 
+  public function readAllByCategory($from_record_num, $records_per_page) {
+    $query = "SELECT id, name, description, price
+              FROM " . $this->table_name. "
+              WHERE category_id = ?
+              ORDER BY name ASC
+              LIMIT {$from_record_num}, {$records_per_page}";
+
+    $stmt = $this->conn->prepare($query);
+    $stmt->bindParam(1, $this->category_id);
+    $stmt->execute();
+    // Retourne les valeurs
+    return $stmt;
+  }
+
   // Permet d'obtenir le dernier enregistrement pour le trasmetre à product_images
   function getLastRecord() {
     $query = "SELECT *
