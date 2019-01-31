@@ -22,4 +22,7 @@ $stmt = $product->readAll($from_record_num, $records_per_page);
 // Le tableau qui contient les données à afficher
 include_once "template.php";
 
+
+include_once "layout_footer.php";
+
 ?>

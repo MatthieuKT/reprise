@@ -1,180 +1,132 @@
+
 body {
-  margin: 0px;
-  font-family: arial;
-  color: #333333;
+margin : 0;
+font-family : arial;
+color : #333333;
 }
-li {
-  list-style: none;
-}
+li { list-style : none; }
+a { text-decoration : none; }
+
 /* Navbar */
 #navigation {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  padding-left: 35px;
-  overflow: hidden;
-  background-color: #f1f1f1;
-
+list-style-type : none;
+margin : 0;
+padding : 0;
+padding-left : 35px;
+overflow : hidden;
+background-color : #f1f1f1;
 }
 #navigation li {
-  float: left;
+float : left;
 }
 #navigation li a {
-  display: block;
-  color: #333333;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+display : block;
+color : #333333;
+text-align : center;
+padding : 14px 16px;
+text-decoration : none;
 }
-/* Change the link color to #111 (black) on hover */
 #navigation li a:hover {
-  background-color: #555;
-  color: white;
+background-color : #555;
+color : white;
 }
 #cart {
-  overflow: hidden;
-
-  max-height: 50px;
+overflow : hidden;
+max-height : 50px;
 }
 .fa-shopping-bag {
-  font-size: 1.8em;
-  position: relative;
-  top: -9px;
+font-size : 1.8em;
+position : relative;
+top : -9px;
 }
 #cart-count {
-  color: white;
-  font-size: 12px;
+color : white;
+font-size : 12px;
+font-weight : bold;
+text-align : center;
+width : 19px;
+position : absolute;
+top : 17px;
+right : 19px;
+}
+/* Menu */
+#menu {
+  margin: 0px 0px 15px 0px;
   font-weight: bold;
   text-align: center;
-  width: 19px;
-  position: absolute;
-  top: 17px;
-  right: 19px;
+  font-size: 23px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px #CCCCCC solid;
 }
-
-/* BreadCrumb */
-#breadcrumb {
-  padding-left: 50px;
-}
-#breadcrumb li{
-  display: inline;
-}
-#breadcrumb a {
+#menu li { float: left; }
+#menu a {
   color: #333333;
+  display: block;
+  text-align: center;
+  padding: 12px 14px;
+  text-decoration: none;
 }
-#breadcrumb a:hover {
+#menu a:hover {
   text-decoration: underline;
 }
 
-/* Divs d'alerte */
+/* Breadcrumb */
+#breadcrumb {
+padding-left : 50px;
+}
+#breadcrumb li {
+display : inline;
+}
+#breadcrumb a {
+color : #333333;
+}
+#breadcrumb a:hover {
+text-decoration : underline;
+}
+/* Div d'alerte */
 .alert-success {
-  margin: auto;
-  width: 400px;
-  border: 1px green solid;
-  padding: 15px;
-  margin-bottom: 5px;
+margin : auto;
+width : 400px;
+border : green solid 1px;
+padding : 15px;
+margin-bottom : 5px;
 }
 .alert-danger {
-  margin: auto;
-  width: 400px;
-  border: 1px red solid;
-  padding: 15px;
-  margin-bottom: 5px;
+margin : auto;
+width : 400px;
+border : red solid 1px;
+padding : 15px;
+margin-bottom : 5px;
 }
-
-
-
-/* Form */
-form {
-  /* Uniquement centrer le formulaire sur la page */
-  margin: 0 auto;
-  width: 500px;
-  /* Encadré pour voir les limites du formulaire */
-  padding: 1em;
-  background-color: white;
-  border-radius: 1em;
-}
-form div + div {
-  margin-top: 1em;
-}
-label {
-  /* Pour être sûrs que toutes les étiquettes ont même taille et sont correctement alignées */
-  display: inline-block;
-  width: 150px;
-  text-align: right;
-}
-input, textarea {
-  /* Pour s'assurer que tous les champs texte ont la même police.
-     Par défaut, les textarea ont une police monospace */
-  font: 1em sans-serif;
-  /* Pour que tous les champs texte aient la même dimension */
-  width: 300px;
-  box-sizing: border-box;
-  /* Pour harmoniser le look & feel des bordures des champs texte */
-  border: 1px solid #999;
-}
-input:focus, textarea:focus {
-  /* Pour souligner légèrement les éléments actifs */
-  border-color: #000;
-}
-textarea {
-  /* Pour aligner les champs texte multi‑ligne avec leur étiquette */
-  vertical-align: top;
-  /* Pour donner assez de place pour écrire du texte */
-  height: 5em;
-}
-.button {
-  /* Pour placer le bouton à la même position que les champs texte */
-  padding-left: 90px; /* même taille que les étiquettes */
-}
-button {
-  /* Cette marge supplémentaire représente grosso modo le même espace que celui
-     entre les étiquettes et les champs texte */
-  margin-left: .5em;
-}
-
-/* Tableau */
+/* Table template */
 table {
-  border-collapse: collapse;
-  margin: auto;
-  width: 90%;
-  background-color: #FAFAFA
+border-collapse : collapse;
+width : 100%;
+background-color : #FAFAFA;
 }
 th {
-  text-align: left;
-  padding: 15px;
-  background-color: #55608E;
-  color: white;
+text-align : left;
+padding : 15px;
+background-color : #55608E;
+color : white;
 }
-td {
-  padding:15px;
+tr:hover {
+background-color : #DAEFFE;
 }
-/* Divers */
-
-/* a:link, a:visited {
-  background-color: #f44336;
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-} */
-
-a {
-  text-decoration: none;
-}
-
- .fas {
-  color: #333333;
-}
-
 table a {
-  /* background:    #f5f5f5; */
-  border:        2px solid #556699;
-  border-radius: 3px;
-  padding:       8px 20px;
-  color:         #302f2f;
-  display:       inline-block;
-  font:          normal 400 14px/1 "Roboto", sans-serif;
-  text-align:    center;
+color : #2B5672;
+}
+table .action {
+border : #556699 solid 2px;
+border-radius : 3px;
+padding : 8px 20px;
+color : #302f2f;
+display : inline-block;
+font : normal 400 14px/1 "Roboto", sans-serif;
+text-align : center;
+}
+.fas { /* Font awesome icon*/
+color : #333333;
 }

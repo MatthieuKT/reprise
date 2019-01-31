@@ -9,5 +9,5 @@ $page_title = "Admin index";
 include_once 'layout_head.php';
 
 // Le footer de la page
-include_once 'layout_head.php';
+include_once 'layout_footer.php';
  ?>

@@ -27,9 +27,9 @@
             echo "</td>";
             echo "<td>";
             // read, edit and delete buttons
-echo "  <a href='read_one.php?id={$id}'>Voir</a>
-        <a href='update_product.php?id={$id}'>Modifier</a>
-        <a delete-id='{$id}'><i class='fas fa-trash-alt'></i></a>
+echo "  <a class='action' href='read_one.php?id={$id}'>Voir</a>
+        <a class='action' href='update_product.php?id={$id}'>Modifier</a>
+        <a class='action' delete-id='{$id}'><i class='fas fa-trash-alt'></i></a>
 ";
             echo "</td>";
         echo "</tr>";

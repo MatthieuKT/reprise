@@ -11,23 +11,23 @@ $access_denied=false;
 // La database
 include_once 'config/database.php';
 // Importation des objets
+include_once 'objects/category.php';
 include_once 'objects/product.php';
 include_once 'objects/product_images.php';
 // Database connexion
 $database = new Database();
 $db = $database->getConnexion();
 // Instanciation des objets
+$category = new Category($db);
 $product = new Product($db);
 $product_image = new ProductImages($db);
-
+// Le header de la page
 include_once 'layout_head.php';
 
-echo "<a href ='category.php?categorie=sacs'>sacs</a>"; // on changera les liens
 echo '<div class="products-display">';
 $stmt = $product->readAll($from_record_num, $records_per_page);
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
   extract($row);
-
   echo '<div class="product">';
     echo '<div class="container">';
     // Select and show first product image

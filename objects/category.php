@@ -11,6 +11,20 @@ class Category {
   $this->conn = $db;
   }
 
+  // Insert new category
+  function add_new() {
+    $query = "INSERT INTO " . $this->table_name . "
+              SET name=:name";
+    $stmt = $this->conn->prepare($query);
+    // Sanitize
+    $this->name = htmlspecialchars(strip_tags($this->name));
+    $stmt->bindParam(':name', $this->name);
+    if ($stmt->execute()) {
+      return true;
+    }
+    return false;
+  }
+
   // Used by select drop-down list
   function read() {
     // Select all data
@@ -32,5 +46,31 @@ class Category {
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
     $this->name = $row['name'];
+  }
+
+  function update() {
+    $query = " UPDATE " . $this->table_name . " SET name=:name WHERE id=:id";
+    $stmt = $this->conn->prepare($query);
+    // Posted values
+    $this->name = htmlspecialchars(strip_tags($this->name));
+    // Bind params
+    $stmt->bindParam(':name', $this->name);
+    $stmt->bindParam(':id', $this->id);
+    if ($stmt->execute()) {
+      return true;
+    }
+    return false;
+  }
+
+  // delete the category
+  function delete(){
+      $query = "DELETE FROM " . $this->table_name . " WHERE id = ?";
+      $stmt = $this->conn->prepare($query);
+      $stmt->bindParam(1, $this->id);
+      if($result = $stmt->execute()){
+          return true;
+      }else{
+          return false;
+      }
   }
 } ?>
