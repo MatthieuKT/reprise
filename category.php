@@ -23,6 +23,8 @@ $product_images = new ProductImages($db);
 $category = new Category($db);
 // TODO: ajouter le titre de la page
 include_once 'layout_head.php';
+// Le menu contenant les catégories de produits
+include_once 'menu.php';
 
 // Récupère le nom de la catégorie en URL
 if (isset($_GET['categorie'])) {
@@ -55,7 +57,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $product_images->product_id = $id;
     $stmt_product_image = $product_images->readFirst();
     while ($row_product_image = $stmt_product_image->fetch(PDO::FETCH_ASSOC)){
-      echo "<img src='admin/uploads/images/{$row_product_image['image1']}'/>";
+      echo "<img src='admin/uploads/images/{$row_product_image['image1']}' alt='#'/>";
     }
 
       echo '<div class="invisible">';
@@ -70,5 +72,6 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 }
 echo '</div>';
 
-
- ?>
+// Footer de la page
+include_once 'layout_footer.php';
+?>

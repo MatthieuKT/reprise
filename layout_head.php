@@ -2,7 +2,7 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title><?php echo $page_title; ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="libs/css/custom.css">
     <link rel="stylesheet" href="libs/css/product-display.css">
@@ -14,5 +14,3 @@
   <body>
     <!-- Inclus la navigation -->
     <?php include_once 'navigation.php'; ?>
-    <!-- Le menu contenant les catégories de produits -->
-    <?php include_once 'menu.php'; ?>

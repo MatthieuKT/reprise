@@ -5,7 +5,7 @@
     <title><?php echo $page_title; ?></title>
     <!-- CSS général -->
     <link rel="stylesheet" href="<?php echo $home_url; ?>libs/css/custom.css">
-    <!-- Le CSS personnalisé pour la section Admin  -->
+    <!-- Le CSS personnalisé pour la section Admin -->
     <link rel="stylesheet" href="<?php echo $home_url; ?>libs/css/admin.css">
     <!-- fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">

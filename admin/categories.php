@@ -18,18 +18,19 @@ $category = new Category($db);
 include_once 'layout_head.php';
 
 $stmt = $category->read();
-echo  "<h1>Catégories <span class='bold'> " . $stmt->rowCount() . "</span></h1>";
+echo "<h1>Catégories <span class='bold'> " . $stmt->rowCount() . "</span></h1>";
 ?>
-<table>
-  <thead>
-    <tr>
-      <th scope="col">Catégorie</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
+<div id="display">
+<section>
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">Catégorie</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
 <?php
-
 while ($row_category = $stmt->fetch(PDO::FETCH_ASSOC)) {
   extract($row_category);
   echo "<tr>";
@@ -38,20 +39,25 @@ while ($row_category = $stmt->fetch(PDO::FETCH_ASSOC)) {
           </td>';
     echo '<td><a href="">test</a></td>';
   echo "</tr>";
-}
-?>
-  </tbody>
-</table>
+}?>
+    </tbody>
+  </table>
+</section>
 
-<!-- Formulaire pour ajouter une catégorie -->
-<form  action="#" method="post" id="add-category">
-  <label for="new-category-name">Nom</label>
-  <input type="text" name="new-category-name" id="new-category-name" required>
-  <input type="submit" value="Ajouter">
-</form>
+<aside>
+  <div id="aside-header">
+    Ajouter une catégorie
+  </div>
+  <!-- Formulaire pour ajouter une catégorie -->
+  <form  action="#" method="post" id="aside-form">
+    <label for="new-category-name">Nom</label>
+    <input type="text" name="new-category-name" id="new-category-name" required>
+    <input type="submit" value="Ajouter">
+  </form>
+</aside>
 
-<!-- Jquery's CDN -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</div> <!-- /display -->
+
 <script>
 // Lors du clic sur le bouton delete-category
 $('#add-category').on('submit', function(event) {
@@ -63,7 +69,7 @@ $('#add-category').on('submit', function(event) {
           }).fail(function() {
               alert('Suppression impossible.');
           });
-  event.preventDefault(); // Empeche la soumission du formulaire de manière normale
+  event.preventDefault(); // Empeche la soumission normale du formulaire
 });
 </script>
 

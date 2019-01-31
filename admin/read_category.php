@@ -68,10 +68,10 @@ $stmt = $product->readAllByCategory($from_record_num, $records_per_page);
     </div>
   </section>
 
-  <aside id='category-update'>
-    <div id='category-update-head'>Infos Catégorie</div>
-    <div id='category-update-body'>
-      <form id="update_category" action="#" method="post">
+  <aside>
+    <div id='aside-header'>Infos Catégorie</div>
+    <div id='aside-body'>
+      <form id="aside-form" action="#" method="post">
         <label for="category_name">Nom catégorie</label>
         <input type="text" id ="category_name" name="category_name" value="<?php echo $category->name; ?>" required>
         <input type="submit" value="Mettre à jour">
@@ -86,7 +86,6 @@ $stmt = $product->readAllByCategory($from_record_num, $records_per_page);
       }
       ?>
       <button id="delete-category" value="<?php echo $category->id; ?>">Supprimer</button>
-    </div>
   </aside>
 </div> <!-- /display-->
 
